@@ -1,0 +1,46 @@
+package cic.entity;
+
+/**
+ *
+ * @author
+ */
+public class Employee {
+	protected String username;
+	protected String password;
+	private Role role;
+
+	public Employee() {
+	}
+
+	public String getUsername() {
+		return this.username;
+	}
+
+	public Role getRole() {
+		return role;
+	}
+
+	// simulates interaction with db
+	public void load(String username) {
+		if (username.compareTo("employee") == 0) {
+			this.username = "employee";
+			this.password = "password";
+			this.role = Role.EMPLOYEE;
+		} else if (username.compareTo("femployee") == 0) {
+			this.username = "femployee";
+			this.password = "password";
+			this.role = Role.FINANCEEMPLOYEE;
+		} else if (username.compareTo("cha") == 0) {
+			this.username = "cha";
+			this.password = "password";
+			this.role = Role.CHA;
+		} else if (username.compareTo("chb") == 0) {
+			this.username = "chb";
+			this.password = "password";
+			this.role = Role.CHB;
+		} else {
+			this.username = null;
+			this.password = "";
+		}
+	}
+}
